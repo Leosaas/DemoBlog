@@ -17,6 +17,10 @@
                                 <th>Tiêu đề</th>
                                 <th>Url</th>
                                 <th>Tóm tắt</th>
+                                <th>Ngày tạo</th>
+                                <th>Ngày Update</th>
+                                <th>Lượt xem</th>
+                                <th>Trạng thái</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -26,9 +30,12 @@
                                 <tr>
                                     <td>@item.IDTinTuc</td>
                                     <td>@item.TieuDe</td>
-                                    <td><a href="@item.Url">@item.Url</a></td>
+                                    <td> <a asp-controller="TinTuc" asp-action="XemTinTuc" asp-route-id="@item.IDTinTuc">@item.Url</a></td>
                                     <td>@item.TomTat</td>
-                                    
+                                    <td>@item.NgayTao.ToString("dd/MM/yyyy")</td>
+                                    <td>@item.NgayUpdate.ToString("dd/MM/yyyy")</td>
+                                    <td>@item.LuotXem</td>
+                                    <td>@item.TrangThai</td>
                                 <td>
                                 <a asp-controller="TinTuc" asp-action="AddOrEdit" asp-route-id="@item.IDTinTuc" class="btn btn-info text-white">
                                 <i class="fas fa-edit text-white"></i> Edit
@@ -38,6 +45,9 @@
                                 <button class="btn btn-danger" type="submit">
                                 <i class="fas fa-trash-alt text-white"></i> Delete
                                 </button>
+                                            <a asp-controller="TinTuc" asp-action="XemTinTuc" asp-route-id="@item.IDTinTuc" class="btn btn-info text-white">
+                                                <i class="fas fa-edit text-white"></i> Xem tin
+                                            </a>
                                 </form>
 
                                     </td>

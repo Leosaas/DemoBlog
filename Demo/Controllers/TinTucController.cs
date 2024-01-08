@@ -180,7 +180,7 @@ namespace Demo.Controllers
                         await _tinTucService.AddTinTuc(res);
 
                     int lastId = _tinTucService.GetAll().ToList().OrderByDescending(x => x.IDTinTuc).First().IDTinTuc;
-                    res.Url = "localhost:7117/TinTuc/XemTinTuc/" + lastId;
+                    res.Url = "https://localhost:7117/TinTuc/XemTinTuc/" + lastId;
                     await _tinTucService.UpdateTinTuc(res);
                     if (data.DanhMucs != null)
                     {
@@ -253,7 +253,11 @@ namespace Demo.Controllers
             var data = await _tinTucService.GetByID(id);
             if(data == null)
             {
-                return RedirectToAction("Index", "Home");
+                return NotFound("Tin này không thể tìm thấy");
+            }
+            if(data.TrangThai == false)
+            {
+                return BadRequest("Tin này đã bị vô hiệu hoá");
             }
             var modelView = _mapper.Map<TinTucViewModel>(data);
             return View(modelView);

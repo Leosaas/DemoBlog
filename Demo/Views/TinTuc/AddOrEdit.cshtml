@@ -68,6 +68,14 @@
                         <span asp-validation-for="TomTat" class="text-danger"></span>
                     </div><!--end form-group-->
 
+                    <div class="form-group mb-2">
+                        <label asp-for="TrangThai" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="TrangThai" type="radio" value="True" />Bật</br>
+                            <input asp-for="TrangThai" type="radio" value="False" />   Tắt</br>
+                        </div>
+                        <span asp-validation-for="TomTat" class="text-danger"></span>
+                    </div><!--end form-group-->
 
                     <div class="form-group mb-2">
                         <label asp-for="NoiDung" class="control-label"></label>
