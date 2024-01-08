@@ -1,0 +1,213 @@
+﻿@using DTO
+
+@model TinTucViewModel
+
+@{
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+<link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet" />
+<<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <p class="mt-0 mb-2 fw-semibold text-dark font-18 text-center">@ViewBag.RenderedHtmlTitle</p>
+            <form asp-action="AddOrEdit" asp-controller="TinTuc" asp-route-id="@Model.IDTinTuc" enctype ="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="IDTinTuc" value="@Model.IDTinTuc" />
+                <input type="hidden" asp-for="NgayTao" value="@Model.NgayTao" />
+                <input type="hidden" asp-for="NgayUpdate" value="@Model.NgayUpdate" />
+                <input type="hidden" asp-for="Url" value="@Model.Url" />
+                <div class="float-left"> 
+                     <p>Hình ảnh</p>
+                    @{
+                        var imgSrc = "";
+                        if(Model.HinhAnh != null)
+                        {
+                            
+                            
+                            
+                                    @*var base64 = Convert.ToBase64String(Model.pImage);*@
+                                    <input type="hidden" asp-for="HinhAnh" value="@Model.HinhAnh" />
+                            imgSrc = @Url.Content(Model.HinhAnh);
+
+                        }
+                        }
+                        <div class="input-group mb-2">
+                            <label for="ImageData">
+                                    <img src="@imgSrc" width="256px" height="256px" id="output"/>
+                             </label>
+                            <input class="form-control" type="file" id="ImageData" name="ImageData" accept="image/png, image/gif, image/jpeg, image/jpg" style="display: none" onchange="loadFile(event)">
+                            <script>
+                                 var loadFile = function(event) {
+                                 var output = document.getElementById('output');
+                                 output.src = URL.createObjectURL(event.target.files[0]);
+                                 output.onload = function() {
+                                    URL.revokeObjectURL(output.src) // free memory
+                                    }
+                                };
+                            </script>
+                    </div>
+                </div>
+                <div class="float-left" style="width: 70%; margin-left: 20px">
+                        <div class="form-group mb-2">
+                        <label asp-for="TieuDe" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="TieuDe" class="form-control" placeholder="Nhập tiêu đề" value="@Model.TieuDe" />
+                        </div>
+                        <span asp-validation-for="TieuDe" class="text-danger"></span>
+                        </div><!--end form-group-->
+
+
+                    <div class="form-group mb-2">
+                        <label asp-for="TomTat" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="TomTat" class="form-control" placeholder="Nhập tóm tắt" value="@Model.TomTat" />
+                        </div>
+                        <span asp-validation-for="TomTat" class="text-danger"></span>
+                    </div><!--end form-group-->
+
+
+                    <div class="form-group mb-2">
+                        <label asp-for="NoiDung" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <textarea runat="server" id="textBox" TextMode="Multiline" class="form-control" name="textBox" asp-for="NoiDung" placeholder="Nhập nội dung">
+                                @Model.NoiDung
+                            </textarea>
+
+                            <script>
+
+
+                                CKEDITOR.replace('textBox');
+
+                                function saveCKEditorContent() {
+                                    var ckEditorContent = CKEDITOR.instances.editor.getData();
+
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: '/YourController/SaveCKEditorContent',
+                                        contentType: 'application/json',
+                                        data: JSON.stringify(ckEditorContent),
+                                        success: function (result) {
+                                            if (result.success) {
+                                                alert('Content saved successfully!');
+                                            } else {
+                                                alert('Error saving content: ' + result.error);
+                                            }
+                                        },
+                                        error: function () {
+                                            alert('Error saving content.');
+                                        }
+                                    });
+                                }
+                            </script>
+                        </div>
+                        <span asp-validation-for="NoiDung" class="text-danger"></span>
+                    </div><!--end form-group-->
+                  
+                    <div class="form-group mb-2">
+                        <label asp-for="DanhMucs" class="control-label">Danh mục</label>
+                        <div class="input-group mb-2">
+                            
+                            <select data-placeholder="Begin typing a name to filter..." multiple class="chosen-select form-control" name="DanhMucs" id="DanhMucs" asp-for="@Model.DanhMucs" value="@Model.DanhMucs">
+                                <option value=""></option>
+                                @{
+                                    foreach (DanhMuc u in ViewBag.DanhMuc)
+                                    {
+                                        if (Model.DanhMucs!=null && Model.DanhMucs.Contains(u))
+                                        {
+                                                    <option value="@u.IDDanhMuc" selected>@u.TenDanhMuc</option>
+                                        }
+                                        else
+                                        {
+                                                    <option value="@u.IDDanhMuc">@u.TenDanhMuc</option>
+                                        }
+                                       
+                                    }
+                                }
+                            </select>
+                            
+                        </div>
+                        <span asp-validation-for="DanhMucs" class="text-danger"></span>
+                    </div><!--end form-group-->
+                   <script>
+      
+                        $(".chosen-select").chosen({
+                            no_results_text: "Oops, nothing found!"
+                        })
+                   </script>
+                       
+                   
+
+                    @*
+                      
+                        <div class="form-group mb-2">
+                        <label asp-for="Units" class="control-label">Đơn vị tính</label>
+                        <div class="input-group mb-2">
+                            <select asp-for="unID" class="form-control">
+                                @{
+                                    foreach(Unit u in Model.Units)
+                                    {
+                                        <option value="@u.unID">@u.unName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <span asp-validation-for="Units" class="text-danger"></span>
+                        </div><!--end form-group-->
+                        <div class="form-group mb-2">
+                        <label asp-for="Categories" class="control-label">Loại rau củ</label>
+                        <div class="input-group mb-2">
+                            <select asp-for="cID" class="form-control">
+                                @{
+                                    foreach(Category c in Model.Categories)
+                                    {
+                                        <option value="@c.cID">@c.cName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                            <span asp-validation-for="Categories" class="text-danger"></span>
+                        </div><!--end form-group-->
+                  
+                    @{
+                        if(Model.pID > 0)
+                        {
+                            <div class="form-group mb-2">
+                        <label asp-for="pActive" class="control-label">Hiện đang kinh doanh </label>
+                        <input asp-for="pActive" type="checkbox" value="@Model.pActive" onchange="this.value=this.checked">
+                        <span asp-validation-for="pActive" class="text-danger"></span>
+                            </div><!--end form-group-->
+                        }
+                        else
+                        {
+                            <input type="hidden" asp-for="@Model.pActive" value="true" />
+                        }
+                    
+                        }
+
+                    *@
+                 </div>  
+                    <div style="clear: both">
+                        <br />
+                        <div class="col-md-12 offset-md-5">
+                            <div class="d-flex">
+                                <div style="margin-right:10px;">
+                                    <input type="submit" value="Submit" class="btn btn-primary btn-block" style="width:80px" />
+                                </div>
+                                <div>
+                                    <a asp-controller="TinTuc" asp-action="XemToanBoTinTuc" class="btn btn-success text-white"><i class="fe-log-out"></i> Close</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+            </form>
+        </div>
+    </div> <!-- end card-->
+</div>
+
+@section scripts{
+   
+}

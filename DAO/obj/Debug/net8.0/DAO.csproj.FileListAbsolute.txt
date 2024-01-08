@@ -1,0 +1,17 @@
+D:\Project C-sharp\Demo\DAO\obj\Debug\net8.0\DAO.csproj.AssemblyReference.cache
+D:\Project C-sharp\Demo\DAO\obj\Debug\net8.0\DAO.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project C-sharp\Demo\DAO\obj\Debug\net8.0\DAO.AssemblyInfoInputs.cache
+D:\Project C-sharp\Demo\DAO\obj\Debug\net8.0\DAO.AssemblyInfo.cs
+D:\Project C-sharp\Demo\DAO\obj\Debug\net8.0\DAO.csproj.CoreCompileInputs.cache
+D:\Project C-sharp\Demo\DAO\bin\Debug\net8.0\DAO.deps.json
+D:\Project C-sharp\Demo\DAO\bin\Debug\net8.0\DAO.runtimeconfig.json
+D:\Project C-sharp\Demo\DAO\bin\Debug\net8.0\DAO.dll
+D:\Project C-sharp\Demo\DAO\bin\Debug\net8.0\DAO.pdb
+D:\Project C-sharp\Demo\DAO\bin\Debug\net8.0\DTO.dll
+D:\Project C-sharp\Demo\DAO\bin\Debug\net8.0\DTO.pdb
+D:\Project C-sharp\Demo\DAO\obj\Debug\net8.0\DAO.csproj.CopyComplete
+D:\Project C-sharp\Demo\DAO\obj\Debug\net8.0\DAO.dll
+D:\Project C-sharp\Demo\DAO\obj\Debug\net8.0\refint\DAO.dll
+D:\Project C-sharp\Demo\DAO\obj\Debug\net8.0\DAO.pdb
+D:\Project C-sharp\Demo\DAO\obj\Debug\net8.0\DAO.genruntimeconfig.cache
+D:\Project C-sharp\Demo\DAO\obj\Debug\net8.0\ref\DAO.dll

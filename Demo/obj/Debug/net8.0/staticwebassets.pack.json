@@ -1,0 +1,977 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Demo.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Demo.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\CHANGES.md",
+      "PackagePath": "staticwebassets\\ckeditor\\CHANGES.md"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\LICENSE.md",
+      "PackagePath": "staticwebassets\\ckeditor\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\README.md",
+      "PackagePath": "staticwebassets\\ckeditor\\README.md"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\SECURITY.md",
+      "PackagePath": "staticwebassets\\ckeditor\\SECURITY.md"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\adapters\\jquery.js",
+      "PackagePath": "staticwebassets\\ckeditor\\adapters\\jquery.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\build-config.js",
+      "PackagePath": "staticwebassets\\ckeditor\\build-config.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\ckeditor.js",
+      "PackagePath": "staticwebassets\\ckeditor\\ckeditor.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\config.js",
+      "PackagePath": "staticwebassets\\ckeditor\\config.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\contents.css",
+      "PackagePath": "staticwebassets\\ckeditor\\contents.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\af.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\af.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\ar.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ar.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\az.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\az.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\bg.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\bg.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\bn.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\bn.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\bs.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\bs.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\ca.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ca.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\cs.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\cs.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\cy.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\cy.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\da.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\da.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\de-ch.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\de-ch.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\de.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\de.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\el.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\el.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\en-au.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\en-au.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\en-ca.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\en-ca.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\en-gb.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\en-gb.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\en.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\en.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\eo.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\eo.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\es-mx.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\es-mx.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\es.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\es.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\et.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\et.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\eu.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\eu.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\fa.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\fa.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\fi.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\fi.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\fo.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\fo.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\fr-ca.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\fr-ca.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\fr.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\fr.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\gl.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\gl.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\gu.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\gu.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\he.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\he.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\hi.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\hi.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\hr.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\hr.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\hu.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\hu.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\id.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\id.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\is.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\is.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\it.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\it.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\ja.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ja.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\ka.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ka.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\km.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\km.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\ko.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ko.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\ku.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ku.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\lt.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\lt.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\lv.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\lv.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\mk.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\mk.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\mn.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\mn.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\ms.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ms.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\nb.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\nb.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\nl.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\nl.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\no.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\no.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\oc.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\oc.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\pl.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\pl.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\pt-br.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\pt-br.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\pt.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\pt.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\ro.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ro.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\ru.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ru.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\si.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\si.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\sk.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\sk.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\sl.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\sl.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\sq.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\sq.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\sr-latn.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\sr-latn.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\sr.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\sr.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\sv.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\sv.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\th.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\th.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\tr.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\tr.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\tt.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\tt.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\ug.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\ug.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\uk.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\uk.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\vi.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\vi.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\zh-cn.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\zh-cn.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\lang\\zh.js",
+      "PackagePath": "staticwebassets\\ckeditor\\lang\\zh.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\plugins\\about\\dialogs\\about.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\about\\dialogs\\about.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\plugins\\about\\dialogs\\hidpi\\logo_ckeditor.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\about\\dialogs\\hidpi\\logo_ckeditor.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\plugins\\about\\dialogs\\logo_ckeditor.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\about\\dialogs\\logo_ckeditor.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\plugins\\clipboard\\dialogs\\paste.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\clipboard\\dialogs\\paste.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\plugins\\dialog\\dialogDefinition.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\dialog\\dialogDefinition.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\plugins\\dialog\\styles\\dialog.css",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\dialog\\styles\\dialog.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\plugins\\icons.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\icons.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\plugins\\icons_hidpi.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\icons_hidpi.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\plugins\\link\\dialogs\\anchor.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\link\\dialogs\\anchor.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\plugins\\link\\dialogs\\link.js",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\link\\dialogs\\link.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\plugins\\link\\images\\anchor.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\link\\images\\anchor.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\plugins\\link\\images\\hidpi\\anchor.png",
+      "PackagePath": "staticwebassets\\ckeditor\\plugins\\link\\images\\hidpi\\anchor.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\css\\samples.css",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\css\\samples.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\img\\github-top.png",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\img\\github-top.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\img\\header-bg.png",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\img\\header-bg.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\img\\header-separator.png",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\img\\header-separator.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\img\\logo.png",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\img\\logo.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\img\\logo.svg",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\img\\logo.svg"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\img\\navigation-tip.png",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\img\\navigation-tip.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\index.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\index.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\js\\sample.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\js\\sample.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\js\\sf.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\js\\sf.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\ajax.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\ajax.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\api.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\api.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\appendto.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\appendto.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\assets\\inlineall\\logo.png",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\assets\\inlineall\\logo.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\assets\\outputxhtml\\outputxhtml.css",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\assets\\outputxhtml\\outputxhtml.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\assets\\posteddata.php",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\assets\\posteddata.php"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\assets\\sample.jpg",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\assets\\sample.jpg"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\assets\\uilanguages\\languages.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\assets\\uilanguages\\languages.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\datafiltering.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\datafiltering.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\dialog\\assets\\my_dialog.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\dialog\\assets\\my_dialog.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\dialog\\dialog.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\dialog\\dialog.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\divreplace.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\divreplace.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\enterkey\\enterkey.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\enterkey\\enterkey.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\index.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\index.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\inlineall.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\inlineall.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\inlinebycode.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\inlinebycode.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\inlinetextarea.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\inlinetextarea.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\jquery.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\jquery.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\readonly.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\readonly.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\replacebyclass.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\replacebyclass.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\replacebycode.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\replacebycode.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\sample.css",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\sample.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\sample.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\sample.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\sample_posteddata.php",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\sample_posteddata.php"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\tabindex.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\tabindex.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\toolbar\\toolbar.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\toolbar\\toolbar.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\uicolor.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\uicolor.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\uilanguages.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\uilanguages.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\wysiwygarea\\fullpage.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\wysiwygarea\\fullpage.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\old\\xhtmlstyle.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\old\\xhtmlstyle.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\css\\fontello.css",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\css\\fontello.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\font\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\font\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\font\\config.json",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\font\\config.json"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\font\\fontello.eot",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\font\\fontello.eot"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\font\\fontello.svg",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\font\\fontello.svg"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\font\\fontello.ttf",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\font\\fontello.ttf"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\font\\fontello.woff",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\font\\fontello.woff"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\index.html",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\index.html"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\js\\abstracttoolbarmodifier.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\js\\abstracttoolbarmodifier.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\js\\fulltoolbareditor.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\js\\fulltoolbareditor.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\js\\toolbarmodifier.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\js\\toolbarmodifier.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\js\\toolbartextmodifier.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\js\\toolbartextmodifier.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\LICENSE",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\codemirror.css",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\codemirror.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\codemirror.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\codemirror.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\javascript.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\javascript.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\neo.css",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\neo.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\show-hint.css",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\show-hint.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\show-hint.js",
+      "PackagePath": "staticwebassets\\ckeditor\\samples\\toolbarconfigurator\\lib\\codemirror\\show-hint.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\dialog.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\dialog.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\dialog_ie.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\dialog_ie.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\dialog_ie8.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\dialog_ie8.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\dialog_iequirks.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\dialog_iequirks.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\editor.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\editor.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\editor_gecko.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\editor_gecko.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\editor_ie.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\editor_ie.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\editor_ie8.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\editor_ie8.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\editor_iequirks.css",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\editor_iequirks.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\icons.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\icons.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\icons_hidpi.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\icons_hidpi.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\arrow.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\arrow.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\close.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\close.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\hidpi\\close.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\hidpi\\close.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\hidpi\\lock-open.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\hidpi\\lock-open.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\hidpi\\lock.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\hidpi\\lock.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\hidpi\\refresh.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\hidpi\\refresh.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\lock-open.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\lock-open.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\lock.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\lock.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\refresh.png",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\refresh.png"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\images\\spinner.gif",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\images\\spinner.gif"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\skins\\moono-lisa\\readme.md",
+      "PackagePath": "staticwebassets\\ckeditor\\skins\\moono-lisa\\readme.md"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\styles.js",
+      "PackagePath": "staticwebassets\\ckeditor\\styles.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\ckeditor\\vendor\\promise.js",
+      "PackagePath": "staticwebassets\\ckeditor\\vendor\\promise.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\uploads\\638403465770967969_LE_DANG_TUAN_ANH_3x4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\638403465770967969_LE_DANG_TUAN_ANH_3x4.jpg"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\uploads\\638403502738608026_LE_DANG_TUAN_ANH_3x4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\638403502738608026_LE_DANG_TUAN_ANH_3x4.jpg"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\uploads\\638403503365071877_LE_DANG_TUAN_ANH_3x4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\638403503365071877_LE_DANG_TUAN_ANH_3x4.jpg"
+    },
+    {
+      "Id": "D:\\Project C-sharp\\Demo\\Demo\\wwwroot\\uploads\\638403537424741566_Screenshot 2023-11-20 211038.png",
+      "PackagePath": "staticwebassets\\uploads\\638403537424741566_Screenshot 2023-11-20 211038.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Demo.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Demo.props",
+      "PackagePath": "build\\Demo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Demo.props",
+      "PackagePath": "buildMultiTargeting\\Demo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Demo.props",
+      "PackagePath": "buildTransitive\\Demo.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

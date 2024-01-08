@@ -1,0 +1,14 @@
+D:\Project C-sharp\Demo\DTO\bin\Debug\net8.0\DTO.deps.json
+D:\Project C-sharp\Demo\DTO\bin\Debug\net8.0\DTO.runtimeconfig.json
+D:\Project C-sharp\Demo\DTO\bin\Debug\net8.0\DTO.dll
+D:\Project C-sharp\Demo\DTO\bin\Debug\net8.0\DTO.pdb
+D:\Project C-sharp\Demo\DTO\obj\Debug\net8.0\DTO.csproj.AssemblyReference.cache
+D:\Project C-sharp\Demo\DTO\obj\Debug\net8.0\DTO.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project C-sharp\Demo\DTO\obj\Debug\net8.0\DTO.AssemblyInfoInputs.cache
+D:\Project C-sharp\Demo\DTO\obj\Debug\net8.0\DTO.AssemblyInfo.cs
+D:\Project C-sharp\Demo\DTO\obj\Debug\net8.0\DTO.csproj.CoreCompileInputs.cache
+D:\Project C-sharp\Demo\DTO\obj\Debug\net8.0\DTO.dll
+D:\Project C-sharp\Demo\DTO\obj\Debug\net8.0\refint\DTO.dll
+D:\Project C-sharp\Demo\DTO\obj\Debug\net8.0\DTO.pdb
+D:\Project C-sharp\Demo\DTO\obj\Debug\net8.0\DTO.genruntimeconfig.cache
+D:\Project C-sharp\Demo\DTO\obj\Debug\net8.0\ref\DTO.dll
