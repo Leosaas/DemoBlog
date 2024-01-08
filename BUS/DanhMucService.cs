@@ -6,7 +6,7 @@ namespace BUS
     public interface IDanhMucService
     {
         Task<DanhMuc> GetByID(int id);
-        IQueryable<DanhMuc> GetAll();
+        List<DanhMuc> GetAll();
 
     }
     public class DanhMucService : IDanhMucService
@@ -17,7 +17,7 @@ namespace BUS
             this.danhMucRepository = danhMucRepository;
         }
 
-        public IQueryable<DanhMuc> GetAll()
+        public List<DanhMuc> GetAll()
         {
             return danhMucRepository.GetAll();
         }

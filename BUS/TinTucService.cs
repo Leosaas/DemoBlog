@@ -6,7 +6,7 @@ namespace BUS
     public interface ITinTucService
     {
         Task<TinTuc> GetByID(int id);
-        IQueryable<TinTuc> GetAll();
+        List<TinTuc> GetAll();
         Task<bool> AddTinTuc(TinTuc tinTuc);
         Task<bool> UpdateTinTuc(TinTuc tinTuc);
         Task<bool> DeleteTinTuc(TinTuc tinTuc);
@@ -15,11 +15,11 @@ namespace BUS
     public class TinTucService : ITinTucService
     {
         private readonly ITinTucRepository tinTucRepository;
-        private readonly IDanhMucTinTucRepository danhMucTinTucRepository;
-        public TinTucService(ITinTucRepository tinTucRepository, IDanhMucTinTucRepository danhMucTinTucRepository)
+  
+        public TinTucService(ITinTucRepository tinTucRepository)
         {
             this.tinTucRepository = tinTucRepository;
-            this.danhMucTinTucRepository = danhMucTinTucRepository;
+ 
         }
 
         public async Task<bool> AddTinTuc(TinTuc tinTuc)
@@ -40,7 +40,7 @@ namespace BUS
             return await tinTucRepository.Delete(tinTuc);   
         }
 
-        public IQueryable<TinTuc> GetAll()
+        public List<TinTuc> GetAll()
         {
             return tinTucRepository.GetAll();
         }

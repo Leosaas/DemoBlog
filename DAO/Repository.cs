@@ -10,7 +10,7 @@ namespace DAO
     public interface IRepository<T>
     {
         Task<T> GetById(object id);
-        IQueryable<T> GetAll();
+        List<T> GetAll();
         Task<bool> Add(T entity);
         Task<bool> Update(T entity);
         Task<bool> Delete(T entity);
@@ -54,9 +54,9 @@ namespace DAO
             }
         }
 
-        public IQueryable<T> GetAll()
+        public List<T> GetAll()
         {
-            return this.Entites;
+            return this.Entites.ToList();
         }
 
         public async Task<T> GetById(object id)

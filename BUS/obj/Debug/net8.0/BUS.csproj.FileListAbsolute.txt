@@ -17,3 +17,4 @@ D:\Project C-sharp\Demo\BUS\obj\Debug\net8.0\refint\BUS.dll
 D:\Project C-sharp\Demo\BUS\obj\Debug\net8.0\BUS.pdb
 D:\Project C-sharp\Demo\BUS\obj\Debug\net8.0\BUS.genruntimeconfig.cache
 D:\Project C-sharp\Demo\BUS\obj\Debug\net8.0\ref\BUS.dll
+D:\Project C-sharp\Demo\BUS\obj\Debug\net8.0\BUS.sourcelink.json

@@ -141,3 +141,6 @@ D:\Project C-sharp\Demo\Demo\obj\Debug\net8.0\Demo.pdb
 D:\Project C-sharp\Demo\Demo\obj\Debug\net8.0\Demo.genruntimeconfig.cache
 D:\Project C-sharp\Demo\Demo\obj\Debug\net8.0\ref\Demo.dll
 D:\Project C-sharp\Demo\Demo\bin\Debug\net8.0\AutoMapper.dll
+D:\Project C-sharp\Demo\Demo\obj\Debug\net8.0\Demo.sourcelink.json
+D:\Project C-sharp\Demo\Demo\bin\Debug\net8.0\Castle.Core.dll
+D:\Project C-sharp\Demo\Demo\bin\Debug\net8.0\Moq.dll

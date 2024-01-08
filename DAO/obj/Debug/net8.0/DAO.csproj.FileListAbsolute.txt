@@ -15,3 +15,4 @@ D:\Project C-sharp\Demo\DAO\obj\Debug\net8.0\refint\DAO.dll
 D:\Project C-sharp\Demo\DAO\obj\Debug\net8.0\DAO.pdb
 D:\Project C-sharp\Demo\DAO\obj\Debug\net8.0\DAO.genruntimeconfig.cache
 D:\Project C-sharp\Demo\DAO\obj\Debug\net8.0\ref\DAO.dll
+D:\Project C-sharp\Demo\DAO\obj\Debug\net8.0\DAO.sourcelink.json
