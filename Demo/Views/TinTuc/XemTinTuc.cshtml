@@ -1,6 +1,37 @@
 ﻿@using DTO
 
 @model TinTucViewModel
-<h1>@Model.TieuDe</h1>
-<h3>@Model.TomTat</h3>
-<div>@Html.Raw(@Model.NoiDung)</div>
+<div class="ms-4 mt-5">
+    <div>
+        <p>Lượt xem: @Model.LuotXem</p>
+    </div>
+    <h1>@Model.TieuDe</h1>
+    <div>@Html.Raw(@Model.NoiDung)</div>
+    <div class="align-bottom">
+        <p>Các bài viết có liên quan: </p>
+        @foreach (var item in ViewBag.TinCoLienQuan)
+        {
+            if (item.TrangThai)
+            {
+                
+                <div class="text-truncate" style="width: 400px; display: inline-block">
+                        <a asp-controller="TinTuc" asp-action="XemTinTuc" asp-route-id="@item.IDTinTuc" style="display:inline-block; width: 100%;">
+                            <i class="fas fa-edit text-white"></i>
+                            <img src="@Url.Content(item.HinhAnh)" width="256px" height="192px" class="float-start" />
+                            <div class="float-start m-2">
+                                <p class="fw-bold text-dark">@item.TieuDe</p>
+                                <p class="text-dark">@item.TomTat</p>
+                                <p class="text-dark">Lượt xem: @item.LuotXem</p>
+                            </div>
+                        </a>
+
+
+
+                </div>
+
+                   
+            }
+
+        }
+    </div>
+</div>

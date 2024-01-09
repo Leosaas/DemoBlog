@@ -1,3 +1,5 @@
+using AutoMapper;
+using BUS;
 using Demo.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -7,15 +9,21 @@ namespace Demo.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly ITinTucService _tinTucService;
+        private readonly IMapper _mapper;
+        public HomeController(ILogger<HomeController> logger,
+             ITinTucService tinTucService,
+             IMapper mapper)
         {
             _logger = logger;
+            _mapper = mapper;
+            _tinTucService = tinTucService;  
         }
 
         public IActionResult Index()
         {
-            return View();
+         
+            return View(_mapper.Map<List<TinTucViewModel>>(_tinTucService.GetAll()));
         }
 
         public IActionResult Privacy()

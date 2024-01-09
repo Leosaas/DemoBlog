@@ -33,17 +33,13 @@ namespace Demo.Controllers
             _hostingEnv = hostingEnv;
             _danhMucTinTucService = danhMucTinTucService;
         }
-
-        public IActionResult Index()
-        {
-            return View();
-        }
         public async Task<IActionResult> AddOrEdit(int id = 0)
         {
-
+            
             TinTucViewModel data = new TinTucViewModel();
             ViewBag.RenderedHtmlTitle = id == 0 ? "THÊM MỚI TIN TỨC" : "CẬP NHẬT TIN TỨC";
             ViewBag.DanhMuc = _danhMucService.GetAll();
+
             if (id != 0)
             {
                 TinTuc res = await _tinTucService.GetByID(id);
@@ -57,88 +53,48 @@ namespace Demo.Controllers
                 data.DanhMucs = await _danhMucTinTucService.LayToanBoDanhMucCuaTinTuc(id);
             return View(data);
         }
-        [HttpPost]
-        [IgnoreAntiforgeryToken]
-        public async Task<JsonResult> UploadImage([FromForm] IFormFile upload)
-        {
-            if (upload.Length <= 0) return null;
-
-            //your custom code logic here
-
-            //1)check if the file is image
-
-            //2)check if the file is too large
-
-            //etc
-
-            var fileName = Guid.NewGuid() + Path.GetExtension(upload.FileName).ToLower();
-
-            //save file under wwwroot/CKEditorImages folder
-
-            var filePath = Path.Combine(
-                Directory.GetCurrentDirectory(), "wwwroot/CKEditorImages",
-                fileName);
-
-            using (var stream = System.IO.File.Create(filePath))
-            {
-                await upload.CopyToAsync(stream);
-            }
-
-            var url = $"{"/CKEditorImages/"}{fileName}";
-
-            var success = new uploadsuccess
-            {
-                Uploaded = 1,
-                FileName = fileName,
-                Url = url
-            };
-
-            return new JsonResult(success);
-        }
-        public class uploadsuccess
-        {
-            public int Uploaded { get; set; }
-            public string FileName { get; set; }
-            public string Url { get; set; }
-        }
+        
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddOrEdit(int id, TinTucViewModel data, IFormFile ImageData)
+        public async Task<IActionResult> AddOrEdit(int id, TinTucViewModel data, IFormFile ImageData = null)
         {
             
             ViewBag.RenderedHtmlTitle = id == 0 ? "THÊM MỚI TIN TỨC" : "CẬP NHẬT TIN TỨC";
             ViewBag.DanhMuc = _danhMucService.GetAll();
-            
-            TinTuc res = _mapper.Map<TinTuc>(data);
-            try
+            data.NoiDung = Request.Form["textBox"].ToString();
+            if (ModelState.IsValid)
+            {
+                TinTuc res = _mapper.Map<TinTuc>(data);
+                try
                 {
-                
-                //if (ImageData != null)
-                //{
 
-                //    using (var memoryStream = new MemoryStream())
-                //    {
-                //        //Stream stream = ImageData.OpenReadStream();
-                //        //stream.CopyTo(memoryStream);
-                //        ImageData.CopyTo(memoryStream);
-                //        byte[] hinhAnhTinTuc = memoryStream.ToArray();
-                //        res.HinhAnh = Convert.ToBase64String(hinhAnhTinTuc);
-                //    }
-                //}
-                if (ImageData != null)
-                {
-      
-                    string path = DateTime.Now.Ticks.ToString() + "_" + ImageData.FileName;
-                    string uploads = Path.Combine(_hostingEnv.WebRootPath, "uploads");
-                    string filePath = Path.Combine(uploads, path);
-                    using (var fileSteam = new FileStream(filePath, FileMode.Create))
+                    //if (ImageData != null)
+                    //{
+
+                    //    using (var memoryStream = new MemoryStream())
+                    //    {
+                    //        //Stream stream = ImageData.OpenReadStream();
+                    //        //stream.CopyTo(memoryStream);
+                    //        ImageData.CopyTo(memoryStream);
+                    //        byte[] hinhAnhTinTuc = memoryStream.ToArray();
+                    //        res.HinhAnh = Convert.ToBase64String(hinhAnhTinTuc);
+                    //    }
+                    //}
+                    if (ImageData != null)
                     {
-                        await ImageData.CopyToAsync(fileSteam);
-                    }
-                    string relativePath = "~/uploads/" + path;
-                    res.HinhAnh = relativePath;
 
-                } 
+                        string path = DateTime.Now.Ticks.ToString() + "_" + ImageData.FileName;
+                        string uploads = Path.Combine(_hostingEnv.WebRootPath, "uploads");
+                        string filePath = Path.Combine(uploads, path);
+                        using (var fileSteam = new FileStream(filePath, FileMode.Create))
+                        {
+                            await ImageData.CopyToAsync(fileSteam);
+                        }
+                        string relativePath = "~/uploads/" + path;
+                        res.HinhAnh = relativePath;
+
+                    }
 
 
 
@@ -146,79 +102,80 @@ namespace Demo.Controllers
 
                     if (id != 0)
                     {
-                    //if (image == null && data.HinhAnh != null)
-                    //{
-                    //    //	byte[] dbImage = productService.GetProduct(id).pImage;
-                    //    byte[] dbImage = Convert.FromBase64String(data.ImageByBase64);
-                    //    res.pImage = dbImage;
-                    //}
-                    res.NoiDung = Request.Form["textBox"].ToString();
+                        //if (image == null && data.HinhAnh != null)
+                        //{
+                        //    //	byte[] dbImage = productService.GetProduct(id).pImage;
+                        //    byte[] dbImage = Convert.FromBase64String(data.ImageByBase64);
+                        //    res.pImage = dbImage;
+                        //}
                         res.NgayUpdate = DateTime.Now;
                         await _danhMucTinTucService.XoaToanBoDanhMucCuaTinTuc(id);
                         await _tinTucService.UpdateTinTuc(res);
                         if (data.DanhMucs != null)
                         {
-                        var dataSelect = Request.Form["DanhMucs"].ToString().Split(",");
+                            var dataSelect = Request.Form["DanhMucs"].ToString().Split(",");
 
-                        foreach (var d in dataSelect)
-                        {
-                            DanhMucTinTuc dm = new DanhMucTinTuc()
+                            foreach (var d in dataSelect)
                             {
-                                IDDanhMuc = int.Parse(d),
-                                IDTintuc = id
-                            };
-                            await _danhMucTinTucService.Add(dm);
+                                DanhMucTinTuc dm = new DanhMucTinTuc()
+                                {
+                                    IDDanhMuc = int.Parse(d),
+                                    IDTintuc = id
+                                };
+                                await _danhMucTinTucService.Add(dm);
+                            }
                         }
                     }
-                }
                     else
                     {
 
-                    res.NoiDung = Request.Form["textBox"].ToString();
-                    res.NgayTao = DateTime.Now;
+                    
+                        res.NgayTao = DateTime.Now;
                         res.NgayUpdate = DateTime.Now;
                         await _tinTucService.AddTinTuc(res);
 
-                    int lastId = _tinTucService.GetAll().ToList().OrderByDescending(x => x.IDTinTuc).First().IDTinTuc;
-                    res.Url = "https://localhost:7117/TinTuc/XemTinTuc/" + lastId;
-                    await _tinTucService.UpdateTinTuc(res);
-                    if (data.DanhMucs != null)
-                    {
-                        var dataSelect = Request.Form["DanhMucs"].ToString().Split(",");
-
-                        foreach (var d in dataSelect)
+                        int lastId = _tinTucService.GetAll().ToList().OrderByDescending(x => x.IDTinTuc).First().IDTinTuc;
+                        res.Url = "https://localhost:7117/TinTuc/XemTinTuc/" + lastId;
+                        await _tinTucService.UpdateTinTuc(res);
+                        if (data.DanhMucs != null)
                         {
-                            DanhMucTinTuc dm = new DanhMucTinTuc()
+                            var dataSelect = Request.Form["DanhMucs"].ToString().Split(",");
+
+                            foreach (var d in dataSelect)
                             {
-                                IDDanhMuc = int.Parse(d),
-                                IDTintuc = lastId
-                            };
-                            await _danhMucTinTucService.Add(dm);
+                                DanhMucTinTuc dm = new DanhMucTinTuc()
+                                {
+                                    IDDanhMuc = int.Parse(d),
+                                    IDTintuc = lastId
+                                };
+                                await _danhMucTinTucService.Add(dm);
+                            }
                         }
                     }
-                }
                 }
                 catch (DbUpdateConcurrencyException)
                 {
                     return NotFound();
                 }
-            
-               
 
-               // return RedirectToAction("XemToanBoTinTuc", "TinTuc");
-            
-            //data.Units = unitService.GetUnits();
-            //data.Categories = categoryService.GetCategories();
-            //if (!data.Units.Any() || !data.Categories.Any())
-            //{
-            //    return Content("Không thể thêm sản phẩm do chưa có đơn vị tính hoặc loại rau củ");
-            //}
-            return RedirectToAction("XemToanBoTinTuc");
+
+
+                // return RedirectToAction("XemToanBoTinTuc", "TinTuc");
+
+                //data.Units = unitService.GetUnits();
+                //data.Categories = categoryService.GetCategories();
+                //if (!data.Units.Any() || !data.Categories.Any())
+                //{
+                //    return Content("Không thể thêm sản phẩm do chưa có đơn vị tính hoặc loại rau củ");
+                //}
+                return RedirectToAction("XemToanBoTinTuc");
+            }
+            return View(data);
         }
         public IActionResult XemToanBoTinTuc()
         {
             //List<TinTucViewModel> danhSachTinTuc = _mapper.Map<List<TinTucViewModel>>(_tinTucService.GetAll());
-             return View(_tinTucService.GetAll());
+             return View(_mapper.Map<List<TinTucViewModel>>(_tinTucService.GetAll()));
    
         }
         [HttpPost]
@@ -246,6 +203,9 @@ namespace Demo.Controllers
         [HttpGet]
         public async Task<IActionResult> XemTinTuc(int id = 0)
         {
+            var tinCoLienQuan = _tinTucService.GetAll().Where(x => x.TrangThai.Equals(true) && !x.IDTinTuc.Equals(id)).OrderBy(arg => Guid.NewGuid()).Take(3).ToList();
+            var tinCoLienQuanModelView = _mapper.Map<List<TinTucViewModel>>(tinCoLienQuan);
+            ViewBag.TinCoLienQuan = tinCoLienQuanModelView;
             if (id == 0)
             {
                 return RedirectToAction("Index", "Home");
@@ -259,7 +219,10 @@ namespace Demo.Controllers
             {
                 return BadRequest("Tin này đã bị vô hiệu hoá");
             }
+            data.LuotXem += 1;
+            await _tinTucService.UpdateTinTuc(data);
             var modelView = _mapper.Map<TinTucViewModel>(data);
+
             return View(modelView);
         }
     }

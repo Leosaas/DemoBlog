@@ -1,16 +1,21 @@
-﻿
+﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"></script>
+<script src="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+@model List<TinTucViewModel>
 <div class="row d-flex justify-content-center">
     <div class="col-12 align-self-center">
         <div class="card">
             <div class="card-body">
-                <p class="mt-0 mb-2 fw-semibold text-dark font-18 text-center">DANH SÁCH TIN TỨC</p>
+                <h2 class="mt-0 mb-2 fw-semibold text-dark font-18 text-center">DANH SÁCH TIN TỨC</h2>
                 <div class="table-responsive">
                     
-                    <div class="mb-2">
+                    <div class="mb-2 flex-end">
                         <a asp-controller="TinTuc" asp-action="AddOrEdit" class="btn btn-success text-white"><i class="fas fa-random"></i> Thêm mới</a>
                     </div>
                     
-                    <table id="basic-datatable" class="table table-hover table-centered dt-responsive nowrap w-100 mb-0">
+                    <table id="basic-datatable" class="table table-hover table-centered dt-responsive nowrap w-100 mb-0" style="width: 100%">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -30,10 +35,10 @@
                                 <tr>
                                     <td>@item.IDTinTuc</td>
                                     <td>@item.TieuDe</td>
-                                    <td> <a asp-controller="TinTuc" asp-action="XemTinTuc" asp-route-id="@item.IDTinTuc">@item.Url</a></td>
+                                    <td> <a asp-controller="TinTuc" asp-action="XemTinTuc" asp-route-id="@item.IDTinTuc"> <i class="fas fa-edit text-white"></i>@item.Url</a></td>
                                     <td>@item.TomTat</td>
-                                    <td>@item.NgayTao.ToString("dd/MM/yyyy")</td>
-                                    <td>@item.NgayUpdate.ToString("dd/MM/yyyy")</td>
+                                    <td>@item.NgayTao?.ToString("dd/MM/yyyy")</td>
+                                    <td>@item.NgayUpdate?.ToString("dd/MM/yyyy")</td>
                                     <td>@item.LuotXem</td>
                                     <td>@item.TrangThai</td>
                                 <td>
@@ -64,6 +69,9 @@
 </div>
 
 @section scripts {
+    <script>
+        new DataTable('#basic-datatable');
+    </script>
     <script>
         jQueryAjaxDelete = form => {
             try {
