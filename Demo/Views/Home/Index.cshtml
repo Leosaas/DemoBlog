@@ -1,4 +1,5 @@
-﻿@{
+﻿@using DTO
+@{
     ViewData["Title"] = "Home Page";
 }
 @model List<TinTucViewModel>
@@ -8,14 +9,48 @@
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+<link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet" />
 <div class="text-center">
     <h1 class="display-4 mt-0">Demo tin tức</h1>
 </div>
 <div>
+    <div >
+        <label for="danhMucBox" class="control-label">Danh mục: </label>
+        <div>
+            <select data-placeholder="Nhập tên để lọc..." multiple class="chosen-select form-control" name="danhMucBox" style="display:flex; width:35%;" id="danhMucBox" onchange="jQueryAjaxFilter()">
+                <option value=""></option>
+                @{
+                    foreach (DanhMuc u in ViewBag.DanhMuc)
+                    {
+                        if (ViewBag.DanhSachDanhMuc != null && ViewBag.DanhSachDanhMuc.Contains(u.IDDanhMuc))
+                        {
+                                <option value="@u.IDDanhMuc" selected>@u.TenDanhMuc</option>
+                        }
+                        else
+                        {
+                                <option value="@u.IDDanhMuc">@u.TenDanhMuc</option>
+                        }
+
+                    }
+                }
+            </select>
+        </div>
+        
+        <script>
+
+            $(".chosen-select").chosen({
+                no_results_text: "Không tìm thấy danh mục"
+            })
+        </script>
+    </div>
     <div class="table-responsive">
+        
         <table id="basic-datatable" class="table table-hover table-centered dt-responsive nowrap w-100 mb-0" style="width: 100%">
+            
             <thead>
                 <td></td>
+           
             </thead>
             <tbody>
                 @foreach(var item in Model)
@@ -50,12 +85,35 @@
            
         </table>
         <script>
-            new DataTable('#basic-datatable');
+           // new DataTable('#basic-datatable');
+            $('#basic-datatable').dataTable({
+                "ordering": false
+            });
         </script>
     </div>
     
 
 </div>
 @section scripts {
+    <script>
+        
+        jQueryAjaxFilter = () => {
+            try {
+                var values = $('#danhMucBox').val();
+                var s = "";
+                for (var i = 0; i < values.length; i++) {
+                    s += "&danhSachDanhMuc=" + values[i];
+                }
+
+                window.location.href = '@Url.Action("Index", "Home")' + '?danhSachDanhMuc=' + s;
+                
+
+            } catch (ex) {
+                console.log(ex)
+            }
+            //prevent default form submit event
+            return false;
+        }
+    </script>
     
 }

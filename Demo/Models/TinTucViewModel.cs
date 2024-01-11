@@ -27,6 +27,6 @@ namespace Demo.Models
         [DisplayName("Trạng thái")]
         public bool TrangThai { get; set; } = true;
         [Required(ErrorMessage = "Phải có ít nhất một danh mục")]
-        public List<DanhMuc> DanhMucs { get; set; }
+        public List<int> DanhMucIds { get; set; }
     }
 }

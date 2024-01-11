@@ -1444,6 +1444,28 @@
           "bin/placeholder/DAO.dll": {}
         }
       },
+      "Demo/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "AutoMapper": "12.0.1",
+          "BUS": "1.0.0",
+          "DTO": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "8.0.0",
+          "Microsoft.EntityFrameworkCore.Relational": "8.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
+          "Moq": "4.20.70"
+        },
+        "compile": {
+          "bin/placeholder/Demo.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Demo.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "DTO/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -3829,6 +3851,11 @@
       "path": "../DAO/DAO.csproj",
       "msbuildProject": "../DAO/DAO.csproj"
     },
+    "Demo/1.0.0": {
+      "type": "project",
+      "path": "../Demo/Demo.csproj",
+      "msbuildProject": "../Demo/Demo.csproj"
+    },
     "DTO/1.0.0": {
       "type": "project",
       "path": "../DTO/DTO.csproj",
@@ -3838,6 +3865,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "BUS >= 1.0.0",
+      "Demo >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.6.0",
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.6.1",
@@ -3880,6 +3908,9 @@
           "projectReferences": {
             "D:\\Project C-sharp\\Demo\\BUS\\BUS.csproj": {
               "projectPath": "D:\\Project C-sharp\\Demo\\BUS\\BUS.csproj"
+            },
+            "D:\\Project C-sharp\\Demo\\Demo\\Demo.csproj": {
+              "projectPath": "D:\\Project C-sharp\\Demo\\Demo\\Demo.csproj"
             }
           }
         }

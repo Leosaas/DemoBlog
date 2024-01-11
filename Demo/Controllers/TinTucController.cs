@@ -6,6 +6,7 @@ using Demo.Models;
 using DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Primitives;
 using System.Data.SqlTypes;
 using System.Diagnostics;
 
@@ -38,7 +39,7 @@ namespace Demo.Controllers
             
             TinTucViewModel data = new TinTucViewModel();
             ViewBag.RenderedHtmlTitle = id == 0 ? "THÊM MỚI TIN TỨC" : "CẬP NHẬT TIN TỨC";
-            ViewBag.DanhMuc = _danhMucService.GetAll();
+            ViewBag.DanhMuc = _danhMucService.GetAll() != null ? _danhMucService.GetAll() : new List<DanhMuc>();
 
             if (id != 0)
             {
@@ -50,7 +51,11 @@ namespace Demo.Controllers
                 }
             }
             if(id != 0)
-                data.DanhMucs = await _danhMucTinTucService.LayToanBoDanhMucCuaTinTuc(id);
+            {
+                var danhMuc = await _danhMucTinTucService.LayToanBoDanhMucCuaTinTuc(id);
+
+                data.DanhMucIds = danhMuc != null ? danhMuc.Select(x=> x.IDDanhMuc).ToList() : [];
+            }
             return View(data);
         }
         
@@ -61,8 +66,8 @@ namespace Demo.Controllers
         {
             
             ViewBag.RenderedHtmlTitle = id == 0 ? "THÊM MỚI TIN TỨC" : "CẬP NHẬT TIN TỨC";
-            ViewBag.DanhMuc = _danhMucService.GetAll();
-            data.NoiDung = Request.Form["textBox"].ToString();
+            ViewBag.DanhMuc = _danhMucService.GetAll() != null ? _danhMucService.GetAll() : new List<DanhMuc>();
+            //data.NoiDung = Request.Form["textBox"].ToString();
             if (ModelState.IsValid)
             {
                 TinTuc res = _mapper.Map<TinTuc>(data);
@@ -111,15 +116,15 @@ namespace Demo.Controllers
                         res.NgayUpdate = DateTime.Now;
                         await _danhMucTinTucService.XoaToanBoDanhMucCuaTinTuc(id);
                         await _tinTucService.UpdateTinTuc(res);
-                        if (data.DanhMucs != null)
+                        if (data.DanhMucIds != null)
                         {
-                            var dataSelect = Request.Form["DanhMucs"].ToString().Split(",");
+                           // var dataSelect = Request.Form["DanhMucs"].ToString().Split(",");
 
-                            foreach (var d in dataSelect)
+                            foreach (var d in data.DanhMucIds)
                             {
                                 DanhMucTinTuc dm = new DanhMucTinTuc()
                                 {
-                                    IDDanhMuc = int.Parse(d),
+                                    IDDanhMuc = d,
                                     IDTintuc = id
                                 };
                                 await _danhMucTinTucService.Add(dm);
@@ -133,19 +138,23 @@ namespace Demo.Controllers
                         res.NgayTao = DateTime.Now;
                         res.NgayUpdate = DateTime.Now;
                         await _tinTucService.AddTinTuc(res);
-
-                        int lastId = _tinTucService.GetAll().ToList().OrderByDescending(x => x.IDTinTuc).First().IDTinTuc;
+                        int lastId = 0;
+                        if(_tinTucService.GetAll()?.Count > 0)
+                        {
+                            lastId = _tinTucService.GetAll().ToList().OrderByDescending(x => x.IDTinTuc).First().IDTinTuc;
+                        }
+                        
                         res.Url = "https://localhost:7117/TinTuc/XemTinTuc/" + lastId;
                         await _tinTucService.UpdateTinTuc(res);
-                        if (data.DanhMucs != null)
+                        if (data.DanhMucIds != null)
                         {
-                            var dataSelect = Request.Form["DanhMucs"].ToString().Split(",");
+                           // var dataSelect = Request.Form["DanhMucs"].ToString().Split(",");
 
-                            foreach (var d in dataSelect)
+                            foreach (var d in data.DanhMucIds)
                             {
                                 DanhMucTinTuc dm = new DanhMucTinTuc()
                                 {
-                                    IDDanhMuc = int.Parse(d),
+                                    IDDanhMuc = d,
                                     IDTintuc = lastId
                                 };
                                 await _danhMucTinTucService.Add(dm);
@@ -153,8 +162,9 @@ namespace Demo.Controllers
                         }
                     }
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (Exception e)
                 {
+                    Console.WriteLine(e.StackTrace);
                     return NotFound();
                 }
 
@@ -172,10 +182,22 @@ namespace Demo.Controllers
             }
             return View(data);
         }
-        public IActionResult XemToanBoTinTuc()
+        [HttpGet]
+        public IActionResult XemToanBoTinTuc(List<int> danhSachDanhMuc = null)
         {
-            //List<TinTucViewModel> danhSachTinTuc = _mapper.Map<List<TinTucViewModel>>(_tinTucService.GetAll());
-             return View(_mapper.Map<List<TinTucViewModel>>(_tinTucService.GetAll()));
+            ViewBag.DanhMuc = _danhMucService.GetAll() != null ? _danhMucService.GetAll() : new List<DanhMuc>();
+            ViewBag.DanhSachDanhMuc = danhSachDanhMuc;
+            var result = new List<TinTucViewModel>();
+            if (danhSachDanhMuc is not null)
+            {
+                result = _mapper.Map<List<TinTucViewModel>>(_danhMucTinTucService.GetTinTucByListIdDanhMuc(danhSachDanhMuc)).ToList();
+            }
+            else
+            {
+                result = _mapper.Map<List<TinTucViewModel>>(_tinTucService.GetAll()).ToList();
+            }
+            return View(result);
+           
    
         }
         [HttpPost]
@@ -195,21 +217,22 @@ namespace Demo.Controllers
                     System.IO.File.Delete(fullPath);
                 }
             }
-            
-            await _tinTucService.DeleteTinTuc(res);
+            bool result = await _danhMucTinTucService.XoaToanBoDanhMucCuaTinTuc(id);
+            result = await _tinTucService.DeleteTinTuc(res);
 
-            return RedirectToAction("XemToanBoTinTuc");
+            return result ? RedirectToAction("XemToanBoTinTuc") : BadRequest();
         }
         [HttpGet]
         public async Task<IActionResult> XemTinTuc(int id = 0)
         {
-            var tinCoLienQuan = _tinTucService.GetAll().Where(x => x.TrangThai.Equals(true) && !x.IDTinTuc.Equals(id)).OrderBy(arg => Guid.NewGuid()).Take(3).ToList();
-            var tinCoLienQuanModelView = _mapper.Map<List<TinTucViewModel>>(tinCoLienQuan);
-            ViewBag.TinCoLienQuan = tinCoLienQuanModelView;
             if (id == 0)
             {
                 return RedirectToAction("Index", "Home");
             }
+        
+            
+            
+            
             var data = await _tinTucService.GetByID(id);
             if(data == null)
             {
@@ -218,6 +241,17 @@ namespace Demo.Controllers
             if(data.TrangThai == false)
             {
                 return BadRequest("Tin này đã bị vô hiệu hoá");
+            }
+            var soLuongTinTuc = _tinTucService.GetAll() == null ? 0 : _tinTucService.GetAll().Count();
+            ViewBag.TinCoLienQuan = new List<TinTucViewModel>();
+            var danhMucCuaTinTuc = (await _danhMucTinTucService.LayToanBoDanhMucCuaTinTuc(id)).Select(x => x.IDDanhMuc);
+            if (soLuongTinTuc > 1) //Ít nhất 2 tin tức để 1 cái gợi ý cho cái còn lại
+            {
+                var tinCoLienQuan = (await _danhMucTinTucService.LayNhungTinTucCoLienQuan(id))
+                    .OrderBy(x => x.LuotXem) //Sort by luọt xem
+                    .Take(3).ToList(); //Lấy tối đa 3 record
+                var tinCoLienQuanModelView = _mapper.Map<List<TinTucViewModel>>(tinCoLienQuan);
+                ViewBag.TinCoLienQuan = tinCoLienQuanModelView;
             }
             data.LuotXem += 1;
             await _tinTucService.UpdateTinTuc(data);

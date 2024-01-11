@@ -1,8 +1,11 @@
-﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"></script>
+﻿@using DTO
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"></script>
 <script src="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"></script>
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.jquery.min.js"></script>
+<link href="https://cdn.rawgit.com/harvesthq/chosen/gh-pages/chosen.min.css" rel="stylesheet" />
 @model List<TinTucViewModel>
 <div class="row d-flex justify-content-center">
     <div class="col-12 align-self-center">
@@ -14,7 +17,35 @@
                     <div class="mb-2 flex-end">
                         <a asp-controller="TinTuc" asp-action="AddOrEdit" class="btn btn-success text-white"><i class="fas fa-random"></i> Thêm mới</a>
                     </div>
-                    
+                    <div>
+                        <label for="danhMucBox" class="control-label">Danh mục: </label>
+                        <div>
+                            <select data-placeholder="Nhập tên để lọc..." multiple class="chosen-select form-control" name="danhMucBox" style="display:flex; width:35%;" id="danhMucBox" onchange="jQueryAjaxFilter()">
+                                <option value=""></option>
+                                @{
+                                    foreach (DanhMuc u in ViewBag.DanhMuc)
+                                    {
+                                        if (ViewBag.DanhSachDanhMuc != null && ViewBag.DanhSachDanhMuc.Contains(u.IDDanhMuc))
+                                        {
+                                            <option value="@u.IDDanhMuc" selected>@u.TenDanhMuc</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@u.IDDanhMuc">@u.TenDanhMuc</option>
+                                        }
+
+                                    }
+                                }
+                            </select>
+                        </div>
+
+                        <script>
+
+                            $(".chosen-select").chosen({
+                                no_results_text: "Không tìm thấy danh mục"
+                            })
+                        </script>
+                    </div>
                     <table id="basic-datatable" class="table table-hover table-centered dt-responsive nowrap w-100 mb-0" style="width: 100%">
                         <thead>
                             <tr>
@@ -50,11 +81,11 @@
                                 <button class="btn btn-danger" type="submit">
                                 <i class="fas fa-trash-alt text-white"></i> Delete
                                 </button>
-                                            <a asp-controller="TinTuc" asp-action="XemTinTuc" asp-route-id="@item.IDTinTuc" class="btn btn-info text-white">
-                                                <i class="fas fa-edit text-white"></i> Xem tin
-                                            </a>
+                                          
                                 </form>
-
+                                        <a asp-controller="TinTuc" asp-action="XemTinTuc" asp-route-id="@item.IDTinTuc" class="btn btn-info text-white">
+                                            <i class="fas fa-edit text-white"></i> Xem tin
+                                        </a>
                                     </td>
                                 
                                 </tr>
@@ -69,6 +100,26 @@
 </div>
 
 @section scripts {
+    <script>
+
+        jQueryAjaxFilter = () => {
+            try {
+                var values = $('#danhMucBox').val();
+                var s = "";
+                for (var i = 0; i < values.length; i++) {
+                    s += "&danhSachDanhMuc=" + values[i];
+                }
+
+                window.location.href = '@Url.Action("XemToanBoTinTuc", "TinTuc")' + '?danhSachDanhMuc=' + s;
+
+
+            } catch (ex) {
+                console.log(ex)
+            }
+            //prevent default form submit event
+            return false;
+        }
+    </script>
     <script>
         new DataTable('#basic-datatable');
     </script>

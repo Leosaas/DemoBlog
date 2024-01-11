@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BUS\BUS.csproj" />
+    <ProjectReference Include="..\Demo\Demo.csproj" />
   </ItemGroup>
 
 </Project>

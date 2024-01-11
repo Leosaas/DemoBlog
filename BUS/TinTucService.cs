@@ -11,14 +11,17 @@ namespace BUS
         Task<bool> UpdateTinTuc(TinTuc tinTuc);
         Task<bool> DeleteTinTuc(TinTuc tinTuc);
 
+
     }
     public class TinTucService : ITinTucService
     {
         private readonly ITinTucRepository tinTucRepository;
+        private readonly IDanhMucTinTucRepository danhMucTinTucRepository;
   
-        public TinTucService(ITinTucRepository tinTucRepository)
+        public TinTucService(ITinTucRepository tinTucRepository, IDanhMucTinTucRepository danhMucTinTucRepository)
         {
             this.tinTucRepository = tinTucRepository;
+            this.danhMucTinTucRepository = danhMucTinTucRepository;
  
         }
 
@@ -49,6 +52,8 @@ namespace BUS
         {
             return await tinTucRepository.GetById(id);
         }
+
+       
 
         public async Task<bool> UpdateTinTuc(TinTuc tinTuc)
         {

@@ -21,7 +21,7 @@
                 <input type="hidden" asp-for="NgayTao" value="@Model.NgayTao" />
                 <input type="hidden" asp-for="NgayUpdate" value="@Model.NgayUpdate" />
                 <input type="hidden" asp-for="Url" value="@Model.Url" />
-                
+                <input type="hidden" asp-for="LuotXem" value="@Model.LuotXem" />
                 <div class="float-start"> 
                      <p>Ảnh bìa</p>
                     @{
@@ -89,14 +89,14 @@
                     <div class="form-group mb-2">
                         <label asp-for="NoiDung" class="control-label"></label>
                         <div class="input-group mb-2">
-                            <textarea runat="server" id="textBox" TextMode="Multiline" class="form-control" name="textBox" asp-for="NoiDung" placeholder="Nhập nội dung">
+                            <textarea runat="server" TextMode="Multiline" class="form-control" asp-for="NoiDung" placeholder="Nhập nội dung">
                                 @Model.NoiDung
                             </textarea>
 
                             <script>
                             
 
-                                CKEDITOR.replace('textBox', {
+                                CKEDITOR.replace('NoiDung', {
                                      width: '100%',
                                      height: '400px'
                                
@@ -109,15 +109,15 @@
                     </div><!--end form-group-->
                   
                     <div class="form-group mb-2">
-                        <label asp-for="DanhMucs" class="control-label">Danh mục bài viết</label>
+                        <label asp-for="DanhMucIds" class="control-label">Danh mục bài viết</label>
                         <div class="input-group mb-2">
                             
-                            <select data-placeholder="Nhập tên để lọc..." multiple class="chosen-select form-control" name="DanhMucs" id="DanhMucs" asp-for="@Model.DanhMucs" value="@Model.DanhMucs">
+                            <select data-placeholder="Nhập tên để lọc..." multiple class="chosen-select form-control" asp-for="@Model.DanhMucIds" value="@Model.DanhMucIds">
                                 <option value=""></option>
                                 @{
                                     foreach (DanhMuc u in ViewBag.DanhMuc)
                                     {
-                                        if (Model.DanhMucs!=null && Model.DanhMucs.Contains(u))
+                                        if (Model.DanhMucIds!=null && Model.DanhMucIds.Contains(u.IDDanhMuc))
                                         {
                                                         <option value="@u.IDDanhMuc" selected>@u.TenDanhMuc</option>
                                         }
@@ -131,7 +131,7 @@
                             </select>
                             
                         </div>
-                        <span asp-validation-for="DanhMucs" class="text-danger"></span>
+                        <span asp-validation-for="DanhMucIds" class="text-danger"></span>
                     </div><!--end form-group-->
                    <script>
       
