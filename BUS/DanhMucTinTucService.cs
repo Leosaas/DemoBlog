@@ -10,6 +10,7 @@ namespace BUS
         Task<bool> XoaToanBoDanhMucCuaTinTuc(int idTinTuc);
         List<TinTuc> GetTinTucByListIdDanhMuc(List<int> idDanhMucs);
         Task<List<TinTuc>> LayNhungTinTucCoLienQuan(int idTinTuc);
+        Task<List<TinTuc>> LayToanBoTinTucKhaDungTheoDanhMuc();
     }
     public class DanhMucTinTucService : IDanhMucTinTucService
     {
@@ -78,6 +79,28 @@ namespace BUS
             var result = tinTucRepository.GetAll().Where(x => danhSachIdTinTucThoaDanhMuc.Contains(x.IDTinTuc) && x.IDTinTuc != idTinTuc && x.TrangThai.Equals(true)).ToList();
             return result;
 
+        }
+
+        public async Task<List<TinTuc>> LayToanBoTinTucKhaDungTheoDanhMuc()
+        {
+            var danhSachTinTuc = tinTucRepository.GetAll();
+            List<TinTuc> tinTucKhaDung = new List<TinTuc>();
+            foreach(var tinTuc in danhSachTinTuc)
+            {
+                bool khaDung = true;
+                var danhSachDanhMucCuaTinTuc = await LayToanBoDanhMucCuaTinTuc(tinTuc.IDTinTuc);
+                foreach(var danhMuc in danhSachDanhMucCuaTinTuc)
+                {
+                    if (!danhMuc.TrangThai)
+                    {
+                        khaDung = false;
+                        break;
+                    }
+                }
+                if(khaDung)
+                    tinTucKhaDung.Add(tinTuc);
+            }
+            return tinTucKhaDung;
         }
     }
 }

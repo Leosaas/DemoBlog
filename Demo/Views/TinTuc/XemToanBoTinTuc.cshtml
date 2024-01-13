@@ -13,9 +13,17 @@
             <div class="card-body">
                 <h2 class="mt-0 mb-2 fw-semibold text-dark font-18 text-center">DANH SÁCH TIN TỨC</h2>
                 <div class="table-responsive">
-                    
+                
                     <div class="mb-2 flex-end">
-                        <a asp-controller="TinTuc" asp-action="AddOrEdit" class="btn btn-success text-white"><i class="fas fa-random"></i> Thêm mới</a>
+                        @if(ViewBag.DanhMuc.Count > 0)
+                        {
+                            <a asp-controller="TinTuc" asp-action="AddOrEdit" class="btn btn-success text-white"><i class="fas fa-random"></i> Thêm mới</a>
+                        }
+                        else{
+
+                            <a asp-controller="TinTuc" asp-action="AddOrEdit" class="btn btn-success text-white disabled"><i class="fas fa-random"></i> Thêm mới</a>
+                        }
+
                     </div>
                     <div>
                         <label for="danhMucBox" class="control-label">Danh mục: </label>

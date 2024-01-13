@@ -10,6 +10,9 @@ namespace Demo
         {
             CreateMap<TinTuc, TinTucViewModel>();
             CreateMap<TinTucViewModel, TinTuc>();
+
+            CreateMap<DanhMuc, DanhMucViewModel>();
+            CreateMap<DanhMucViewModel, DanhMuc>();
         }
     }
 }

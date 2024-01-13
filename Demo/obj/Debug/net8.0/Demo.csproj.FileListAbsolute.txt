@@ -144,3 +144,4 @@ D:\Project C-sharp\Demo\Demo\bin\Debug\net8.0\AutoMapper.dll
 D:\Project C-sharp\Demo\Demo\obj\Debug\net8.0\Demo.sourcelink.json
 D:\Project C-sharp\Demo\Demo\bin\Debug\net8.0\Castle.Core.dll
 D:\Project C-sharp\Demo\Demo\bin\Debug\net8.0\Moq.dll
+D:\Project C-sharp\Demo\Demo\bin\Debug\net8.0\Newtonsoft.Json.dll

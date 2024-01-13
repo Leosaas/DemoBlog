@@ -7,8 +7,11 @@ using DTO;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Primitives;
+using Newtonsoft.Json;
 using System.Data.SqlTypes;
 using System.Diagnostics;
+using System.IO;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Demo.Controllers
 {
@@ -36,26 +39,20 @@ namespace Demo.Controllers
         }
         public async Task<IActionResult> AddOrEdit(int id = 0)
         {
-            
             TinTucViewModel data = new TinTucViewModel();
             ViewBag.RenderedHtmlTitle = id == 0 ? "THÊM MỚI TIN TỨC" : "CẬP NHẬT TIN TỨC";
-            ViewBag.DanhMuc = _danhMucService.GetAll() != null ? _danhMucService.GetAll() : new List<DanhMuc>();
-
-            if (id != 0)
+            ViewBag.DanhMuc = _danhMucService.GetAll() != null ? _danhMucService.GetAll().ToList() : new List<DanhMuc>();
+            if (id != 0) //Trường hợp cập nhật
             {
                 TinTuc res = await _tinTucService.GetByID(id);
-                data = _mapper.Map<TinTucViewModel>(res);
-                if (data == null)
+                if (res is null)
                 {
-                    return NotFound();
+                    return NotFound(); //Trả về not found nếu không tìm thấy tin tức
                 }
-            }
-            if(id != 0)
-            {
+                data = _mapper.Map<TinTucViewModel>(res);
                 var danhMuc = await _danhMucTinTucService.LayToanBoDanhMucCuaTinTuc(id);
-
-                data.DanhMucIds = danhMuc != null ? danhMuc.Select(x=> x.IDDanhMuc).ToList() : [];
-            }
+                data.DanhMucIds = danhMuc is not null ? danhMuc.Select(x => x.IDDanhMuc).ToList() : new List<int>();
+            } 
             return View(data);
         }
         
@@ -64,62 +61,33 @@ namespace Demo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AddOrEdit(int id, TinTucViewModel data, IFormFile ImageData = null)
         {
-            
             ViewBag.RenderedHtmlTitle = id == 0 ? "THÊM MỚI TIN TỨC" : "CẬP NHẬT TIN TỨC";
-            ViewBag.DanhMuc = _danhMucService.GetAll() != null ? _danhMucService.GetAll() : new List<DanhMuc>();
+            ViewBag.DanhMuc = _danhMucService.GetAll() != null ? _danhMucService.GetAll().ToList() : new List<DanhMuc>();
             //data.NoiDung = Request.Form["textBox"].ToString();
             if (ModelState.IsValid)
             {
                 TinTuc res = _mapper.Map<TinTuc>(data);
                 try
                 {
-
-                    //if (ImageData != null)
-                    //{
-
-                    //    using (var memoryStream = new MemoryStream())
-                    //    {
-                    //        //Stream stream = ImageData.OpenReadStream();
-                    //        //stream.CopyTo(memoryStream);
-                    //        ImageData.CopyTo(memoryStream);
-                    //        byte[] hinhAnhTinTuc = memoryStream.ToArray();
-                    //        res.HinhAnh = Convert.ToBase64String(hinhAnhTinTuc);
-                    //    }
-                    //}
-                    if (ImageData != null)
+                    if (ImageData != null) //Image data là dữ liệu từ ảnh bìa
                     {
-
                         string path = DateTime.Now.Ticks.ToString() + "_" + ImageData.FileName;
                         string uploads = Path.Combine(_hostingEnv.WebRootPath, "uploads");
                         string filePath = Path.Combine(uploads, path);
                         using (var fileSteam = new FileStream(filePath, FileMode.Create))
                         {
-                            await ImageData.CopyToAsync(fileSteam);
+                            await ImageData.CopyToAsync(fileSteam); //Lưu hình ảnh về server 
                         }
-                        string relativePath = "~/uploads/" + path;
+                        string relativePath = "~/uploads/" + path; //lấy đường dẫn tương đối gán vào model
                         res.HinhAnh = relativePath;
-
                     }
-
-
-
-
-
                     if (id != 0)
                     {
-                        //if (image == null && data.HinhAnh != null)
-                        //{
-                        //    //	byte[] dbImage = productService.GetProduct(id).pImage;
-                        //    byte[] dbImage = Convert.FromBase64String(data.ImageByBase64);
-                        //    res.pImage = dbImage;
-                        //}
                         res.NgayUpdate = DateTime.Now;
-                        await _danhMucTinTucService.XoaToanBoDanhMucCuaTinTuc(id);
+                        await _danhMucTinTucService.XoaToanBoDanhMucCuaTinTuc(id); //Trường hợp có cập nhật danh mục cho tin tức, cần xoá toàn bộ danh mục cũ và thêm vào các danh mục mới
                         await _tinTucService.UpdateTinTuc(res);
                         if (data.DanhMucIds != null)
                         {
-                           // var dataSelect = Request.Form["DanhMucs"].ToString().Split(",");
-
                             foreach (var d in data.DanhMucIds)
                             {
                                 DanhMucTinTuc dm = new DanhMucTinTuc()
@@ -133,23 +101,19 @@ namespace Demo.Controllers
                     }
                     else
                     {
-
-                    
                         res.NgayTao = DateTime.Now;
                         res.NgayUpdate = DateTime.Now;
                         await _tinTucService.AddTinTuc(res);
-                        int lastId = 0;
+                        int lastId = 0; 
                         if(_tinTucService.GetAll()?.Count > 0)
                         {
-                            lastId = _tinTucService.GetAll().ToList().OrderByDescending(x => x.IDTinTuc).First().IDTinTuc;
+                            lastId = _tinTucService.GetAll().ToList().OrderByDescending(x => x.IDTinTuc).First().IDTinTuc; //Lấy id của tin tức vừa thêm vào
                         }
                         
                         res.Url = "https://localhost:7117/TinTuc/XemTinTuc/" + lastId;
                         await _tinTucService.UpdateTinTuc(res);
                         if (data.DanhMucIds != null)
                         {
-                           // var dataSelect = Request.Form["DanhMucs"].ToString().Split(",");
-
                             foreach (var d in data.DanhMucIds)
                             {
                                 DanhMucTinTuc dm = new DanhMucTinTuc()
@@ -164,20 +128,9 @@ namespace Demo.Controllers
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.StackTrace);
-                    return NotFound();
+                    
+                    return BadRequest();
                 }
-
-
-
-                // return RedirectToAction("XemToanBoTinTuc", "TinTuc");
-
-                //data.Units = unitService.GetUnits();
-                //data.Categories = categoryService.GetCategories();
-                //if (!data.Units.Any() || !data.Categories.Any())
-                //{
-                //    return Content("Không thể thêm sản phẩm do chưa có đơn vị tính hoặc loại rau củ");
-                //}
                 return RedirectToAction("XemToanBoTinTuc");
             }
             return View(data);
@@ -185,20 +138,12 @@ namespace Demo.Controllers
         [HttpGet]
         public IActionResult XemToanBoTinTuc(List<int> danhSachDanhMuc = null)
         {
-            ViewBag.DanhMuc = _danhMucService.GetAll() != null ? _danhMucService.GetAll() : new List<DanhMuc>();
+            ViewBag.DanhMuc = _danhMucService.GetAll() != null ? _danhMucService.GetAll().ToList() : new List<DanhMuc>();
             ViewBag.DanhSachDanhMuc = danhSachDanhMuc;
-            var result = new List<TinTucViewModel>();
-            if (danhSachDanhMuc is not null)
-            {
-                result = _mapper.Map<List<TinTucViewModel>>(_danhMucTinTucService.GetTinTucByListIdDanhMuc(danhSachDanhMuc)).ToList();
-            }
-            else
-            {
-                result = _mapper.Map<List<TinTucViewModel>>(_tinTucService.GetAll()).ToList();
-            }
+            var result = danhSachDanhMuc is not null
+                ? _mapper.Map<List<TinTucViewModel>>(_danhMucTinTucService.GetTinTucByListIdDanhMuc(danhSachDanhMuc)).ToList()
+                : _mapper.Map<List<TinTucViewModel>>(_tinTucService.GetAll()).ToList();
             return View(result);
-           
-   
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -214,12 +159,10 @@ namespace Demo.Controllers
                 if (System.IO.File.Exists(fullPath))
                 {
 
-                    System.IO.File.Delete(fullPath);
+                    System.IO.File.Delete(fullPath); //Xoá hình ảnh đã được lưu ở server
                 }
             }
-            bool result = await _danhMucTinTucService.XoaToanBoDanhMucCuaTinTuc(id);
-            result = await _tinTucService.DeleteTinTuc(res);
-
+            bool result = await _danhMucTinTucService.XoaToanBoDanhMucCuaTinTuc(id) && await _tinTucService.DeleteTinTuc(res);
             return result ? RedirectToAction("XemToanBoTinTuc") : BadRequest();
         }
         [HttpGet]
@@ -227,22 +170,19 @@ namespace Demo.Controllers
         {
             if (id == 0)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home"); //Tin không hợp lệ
             }
-        
-            
-            
-            
             var data = await _tinTucService.GetByID(id);
             if(data == null)
             {
                 return NotFound("Tin này không thể tìm thấy");
             }
-            if(data.TrangThai == false)
+            var tinKhaDung = await _danhMucTinTucService.LayToanBoTinTucKhaDungTheoDanhMuc();
+            if(data.TrangThai == false || !tinKhaDung.Contains(data))
             {
                 return BadRequest("Tin này đã bị vô hiệu hoá");
             }
-            var soLuongTinTuc = _tinTucService.GetAll() == null ? 0 : _tinTucService.GetAll().Count();
+            var soLuongTinTuc = _tinTucService.GetAll() is null ? 0 : _tinTucService.GetAll().Count();
             ViewBag.TinCoLienQuan = new List<TinTucViewModel>();
             var danhMucCuaTinTuc = (await _danhMucTinTucService.LayToanBoDanhMucCuaTinTuc(id)).Select(x => x.IDDanhMuc);
             if (soLuongTinTuc > 1) //Ít nhất 2 tin tức để 1 cái gợi ý cho cái còn lại
@@ -256,8 +196,39 @@ namespace Demo.Controllers
             data.LuotXem += 1;
             await _tinTucService.UpdateTinTuc(data);
             var modelView = _mapper.Map<TinTucViewModel>(data);
-
             return View(modelView);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> UploadImage(IFormFile upload)
+        {
+            if (upload.Length <= 0) return null;
+
+            //your custom code logic here
+
+            //1)check if the file is image
+
+            //2)check if the file is too large
+
+            //etc
+
+           
+
+            //save file under wwwroot/CKEditorImages folder
+            string path = DateTime.Now.Ticks.ToString() + "_" + upload.FileName;
+            string uploads = Path.Combine(Directory.GetCurrentDirectory(), _hostingEnv.WebRootPath, "uploads");
+            string filePath = Path.Combine(uploads, path);
+            using (var fileSteam = new FileStream(filePath, FileMode.Create))
+            {
+                await upload.CopyToAsync(fileSteam); //Lưu hình ảnh về server 
+            }
+
+            var url = $"{"/CKEditorImages/"}{path}";
+
+            var successMessage = "image is uploaded";
+
+            dynamic success = JsonConvert.DeserializeObject("{ 'uploaded': 1,'fileName': \"" + path + "\",'url': \"" + url + "\", 'error': { 'message': \"" + successMessage + "\"}}");
+            return Json(success);
         }
     }
 }

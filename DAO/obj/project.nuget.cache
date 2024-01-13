@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QoJCGYFvsds1gOFVP39/mwuDvIfXltYeSmZPsfjY8LizQjtYHjrNGdTPAlgxJcj2YlOQQ36jdCvJE0uxDi80qA==",
+  "dgSpecHash": "QrPCYfE9yqWfTrPJIHo8mTvDa2iZEE7DsakMe6AaZAM+29ZzCqXAyhipIjbMpb2aLAC55RwnsMyFU6VSXBDMbw==",
   "success": true,
   "projectFilePath": "D:\\Project C-sharp\\Demo\\DAO\\DAO.csproj",
   "expectedPackageFiles": [
@@ -48,6 +48,7 @@
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\moq\\4.20.70\\moq.4.20.70.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\system.composition\\6.0.0\\system.composition.6.0.0.nupkg.sha512",

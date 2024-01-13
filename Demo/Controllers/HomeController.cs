@@ -28,19 +28,14 @@ namespace Demo.Controllers
         }
         [HttpGet]
        
-        public IActionResult Index(List<int> danhSachDanhMuc = null)
+        public async Task<IActionResult> Index(List<int> danhSachDanhMuc = null)
         {
-            ViewBag.DanhMuc = _danhMucService.GetAll() != null ? _danhMucService.GetAll() : new List<DanhMuc>();
+            ViewBag.DanhMuc = _danhMucService.GetAll() != null ? _danhMucService.GetAll().Where(x => x.TrangThai.Equals(true)).ToList() : new List<DanhMuc>();
             ViewBag.DanhSachDanhMuc = danhSachDanhMuc;
             var result = new List<TinTucViewModel>();
-            if (danhSachDanhMuc is not null)
-            {
-                result = _mapper.Map<List<TinTucViewModel>>(_danhMuctinTucService.GetTinTucByListIdDanhMuc(danhSachDanhMuc).OrderByDescending(x => x.NgayUpdate)).ToList();
-            }
-            else
-            {
-                result = _mapper.Map<List<TinTucViewModel>>(_tinTucService.GetAll().OrderByDescending(x => x.NgayUpdate)).ToList();
-            }
+            result = danhSachDanhMuc is not null
+                ? _mapper.Map<List<TinTucViewModel>>(_danhMuctinTucService.GetTinTucByListIdDanhMuc(danhSachDanhMuc).OrderByDescending(x => x.NgayUpdate)).ToList()
+                : _mapper.Map<List<TinTucViewModel>>((await _danhMuctinTucService.LayToanBoTinTucKhaDungTheoDanhMuc()).OrderByDescending(x => x.NgayUpdate)).ToList();
             return View(result);
         }
     

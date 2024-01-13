@@ -16,6 +16,7 @@
         <div class="card-body">
             <h2 class="mt-0 mb-2 fw-semibold text-dark font-18 text-center">@ViewBag.RenderedHtmlTitle</h2>
             <form asp-action="AddOrEdit" asp-controller="TinTuc" asp-route-id="@Model.IDTinTuc" enctype ="multipart/form-data">
+                
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="IDTinTuc" value="@Model.IDTinTuc" />
                 <input type="hidden" asp-for="NgayTao" value="@Model.NgayTao" />
@@ -78,12 +79,7 @@
                           
                             </br>
                             <input asp-for="TrangThai" type="radio" value="False" class="form-check-input" /> Tắt
-                          
-                  
-                            
-
-                        
-                        <span asp-validation-for="TomTat" class="text-danger"></span>
+                        <span asp-validation-for="TrangThai" class="text-danger"></span>
                     </div><!--end form-group-->
 
                     <div class="form-group mb-2">
@@ -96,12 +92,13 @@
                             <script>
                             
 
-                                CKEDITOR.replace('NoiDung', {
+                                var editor = CKEDITOR.replace('NoiDung', {
                                      width: '100%',
-                                     height: '400px'
-                               
+                                     height: '400px',
+                                     //filebrowserImageUploadUrl: '/TinTuc/UpLoadImage'
+                                    cloudServices_tokenUrl: 'https://104215.cke-cs.com/token/dev/1d8342c97eba89e9914348b89f8987de2a05446c4a5704bdf1cf2281caf2?limit=10',
+                                    cloudServices_uploadUrl: 'https://104215.cke-cs.com/easyimage/upload/'
                                 });
-
                                
                             </script>
                         </div>

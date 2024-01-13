@@ -16,13 +16,10 @@ namespace BUS
     public class TinTucService : ITinTucService
     {
         private readonly ITinTucRepository tinTucRepository;
-        private readonly IDanhMucTinTucRepository danhMucTinTucRepository;
   
-        public TinTucService(ITinTucRepository tinTucRepository, IDanhMucTinTucRepository danhMucTinTucRepository)
+        public TinTucService(ITinTucRepository tinTucRepository)
         {
             this.tinTucRepository = tinTucRepository;
-            this.danhMucTinTucRepository = danhMucTinTucRepository;
- 
         }
 
         public async Task<bool> AddTinTuc(TinTuc tinTuc)

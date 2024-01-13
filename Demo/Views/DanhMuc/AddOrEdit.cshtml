@@ -1,0 +1,52 @@
+﻿@using DTO
+
+@model DanhMucViewModel
+
+@{
+}
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="mt-0 mb-2 fw-semibold text-dark font-18 text-center">@ViewBag.RenderedHtmlTitle</h2>
+            <form asp-action="AddOrEdit" asp-controller="DanhMuc" asp-route-id="@Model.IDDanhMuc">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="IDDanhMuc" value="@Model.IDDanhMuc" />
+                <div class="float-start" style="width: 70%; margin-left: 20px">
+                        <div class="form-group mb-2">
+                        <label asp-for="TenDanhMuc" class="control-label"></label>
+                        <div class="input-group mb-2">
+                            <input asp-for="TenDanhMuc" class="form-control" placeholder="Nhập tên danh mục" value="@Model.TenDanhMuc" />
+                        </div>
+                        <span asp-validation-for="TenDanhMuc" class="text-danger"></span>
+                        </div><!--end form-group-->
+                    <div class="form-group mb-2">
+                        <label asp-for="TrangThai" class="control-label"></label>
+                        </br>
+                        <input asp-for="TrangThai" type="radio" value="True" class="form-check-input" /> Bật
+                        </br>
+                        <input asp-for="TrangThai" type="radio" value="False" class="form-check-input" /> Tắt
+                        <span asp-validation-for="TrangThai" class="text-danger"></span>
+                    </div><!--end form-group-->
+                 </div>  
+                    <div style="clear: both">
+                        <br />
+                        <div class="col-md-12 offset-md-5">
+                            <div class="d-flex">
+                                <div style="margin-right:10px;">
+                                    <input type="submit" value="Submit" class="btn btn-primary btn-block" style="width:80px" />
+                                </div>
+                                <div>
+                                    <a asp-controller="DanhMuc" asp-action="XemToanBoDanhMuc" class="btn btn-success text-white"><i class="fe-log-out"></i> Close</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+            </form>
+        </div>
+    </div> <!-- end card-->
+</div>
+
+@section scripts{
+   
+}

@@ -7,6 +7,9 @@ namespace BUS
     {
         Task<DanhMuc> GetByID(int id);
         List<DanhMuc> GetAll();
+        Task<bool> AddDanhMuc(DanhMuc danhMuc);
+        Task<bool> UpdateDanhMuc(DanhMuc danhMuc);
+        Task<bool> DeleteDanhMuc(DanhMuc danhMuc);
 
     }
     public class DanhMucService : IDanhMucService
@@ -15,6 +18,16 @@ namespace BUS
         public DanhMucService(IDanhMucRepository danhMucRepository)
         {
             this.danhMucRepository = danhMucRepository;
+        }
+
+        public async Task<bool> AddDanhMuc(DanhMuc danhMuc)
+        {
+            return await danhMucRepository.Add(danhMuc);
+        }
+
+        public async Task<bool> DeleteDanhMuc(DanhMuc danhMuc)
+        {
+            return await danhMucRepository.Delete(danhMuc);
         }
 
         public List<DanhMuc> GetAll()
@@ -26,6 +39,10 @@ namespace BUS
         {
             return await danhMucRepository.GetById(id);
         }
-      
+
+        public async Task<bool> UpdateDanhMuc(DanhMuc danhMuc)
+        {
+            return await danhMucRepository.Update(danhMuc);
+        }
     }
 }
